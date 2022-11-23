@@ -1,0 +1,308 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after
+{
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+*
+{
+    margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body
+{
+    height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body
+{
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg
+{
+    display: block;
+    max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select
+{
+    font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6
+{
+    overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next
+{
+    isolation: isolate;
+}
+
+
+:root
+{
+    --clr-soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayish-blue: hsl(233, 8%, 79%);
+    --Dark-grayish-blue: hsl(236, 13%, 42%);
+    --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+
+body
+{
+    font-family: 'Inter', sans-serif;
+    margin: 0 20px;
+
+}
+
+
+header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .menu
+{
+    color: var(--Dark-grayish-blue);
+}
+
+header span
+{
+    padding: 20px 15px;
+}
+
+section.news
+{
+    display: grid;
+    gap: 30px;
+}
+
+
+
+.main
+{
+    display: grid;
+    gap: 30px;
+}
+
+.main-details
+{
+    display: flex;
+}
+
+.main-details h1
+{
+    font-size: 60px;
+    line-height: initial;
+    font-weight: 800;
+}
+
+.main-details .cta
+{
+    display: grid;
+    grid-template-rows: 1fr;;
+}
+
+.main-details .cta p
+{
+    font-size: 15px;
+    color: var(--Dark-grayish-blue);
+}
+
+.main-details .cta button
+{
+    background-color: var(--soft-red);
+    border: none;
+    padding: 10px 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    max-width: fit-content;
+    letter-spacing: 3px;
+}
+
+.main-details div
+{
+
+}
+
+img
+{
+    max-width: 100%;
+}
+
+.news-sidebar
+{
+    background-color: var(--Very-dark-blue);
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.news-sidebar h3
+{
+    font-size: 40px;
+    color: var(--clr-soft-orange);
+}
+
+.news-sidebar p
+{
+    color: var(--Grayish-blue);
+
+}
+
+
+.news-sidebar div
+{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    font-size: 15px;
+    padding: 20px 0;
+}
+
+.news-sidebar div:last-of-type
+{
+    border-bottom: none;
+}
+
+.news-sidebar h5
+{
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.top-articles
+{
+    display: flex;
+    margin-top: 50px;;
+}
+
+.top-articles article
+{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 25px;
+    color: var(--Dark-grayish-blue);
+}
+
+.top-articles article span
+{
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--Grayish-blue);
+}
+
+.top-articles article h6
+{
+    color: var(--Very-dark-blue);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.top-articles article p
+{
+    font-size: 15px;
+}
+
+
+
+#open-menu, #close-menu
+{
+    cursor: pointer;
+    z-index: 99;
+}
+
+
+@media (min-width: 375px)
+{
+    section.news
+    {
+        grid-template-columns: 3fr 1fr;
+    }
+
+    .hidden-md
+    {
+        display: none;
+    }
+
+}
+
+@media (max-width: 375px)
+{
+    .hidden-sm
+    {
+        display: none;
+    }
+
+    .show-sm
+    {
+        display: block;
+    }
+
+    .menu.show
+    {
+        position: absolute;
+        display: flex;
+        flex-flow: column;
+        background-color: #fff;
+        top: 0;
+        right: 0;
+        width: 80vw;
+        height: 100vh;
+        padding-top: 40%;
+    }
+
+    .main-details, .top-articles
+    {
+        flex-flow: column;
+
+    }
+
+    .top-articles article
+    {
+        margin: 20px 0;
+    }
+
+    .top-articles .details
+    {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+    }
+
+
+
+}
